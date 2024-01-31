@@ -1,0 +1,14 @@
+tomo un dato: BPM: 1687342260000,2023-06-21T10:11:00Z,451-1-1-01,82,
+1687342260000 -> GMT: Wednesday, 21 June 2023 10:11:00
+Your time zone: miércoles, 21 de junio de 2023 12:11:00 GMT+02:00 DST
+
+Los datos en tiempo real se almacenan en csv
+	Se actualizan cada 5 minutos, añadiendo las 5 filas de golpe
+	La solicitud en el momento genera un csv con un minimo de retrazo
+	de 5 minutos de los datos en tiempo real
+
+Lod datos avro tienen un retraso de 15 minutos tras la solicitud
+	Ultimo archivo avro siendo las 13:03 da resultados de las 12:32:03
+	Se va creando uno nuevo cada 15 minutos
+
+No se puede almacenar un csv abierto

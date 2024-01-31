@@ -1,0 +1,20 @@
+## inicio
+{
+    "sender": "Gymtar_user",
+    "message": "inicio",
+    "metadata": {"event":"know","language":"es-ES"} 
+}
+
+## login
+{
+    "sender": "Gymtar_user",
+    "message": "login",
+    "metadata": {"event":"know","id":"101","pass":"123","language":"es-ES"} 
+}
+
+## register
+{
+    "sender": "Gymtar_user",
+    "message": "register",
+    "metadata": {"event":"know","language":"es-ES"} 
+}

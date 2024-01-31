@@ -1,0 +1,439 @@
+version: "2.0"
+nlu:
+- intent: afirmar
+  examples: |
+    - desde luego.
+    - claro.
+    - por supuesto.
+    - si.
+    - sí.
+    - vale.
+    - si por favor.
+    - me parece bien.
+    - bien.
+    - ok.
+    - afirmativo.
+    - estas en lo correcto.
+    - suena bien.
+    - correcto.
+    - dale.
+    - uh si.
+    - eso es.
+    - si si.
+    - asi es.
+    - estupendo.
+    - de acuerdo.
+    - si, me encantaria.
+    - si, por favor.
+- intent: agradecer
+  examples: |
+    - muchas gracias.
+    - gracias.
+    - gracias amigo.
+    - gracias amiga.
+    - gracias señorita.
+    - gracias señora.
+    - gracias sonia.
+    - gracias colega.
+    - genial, gracias.
+- intent: analizame
+  examples: |
+    - ¿Cómo me notas?
+    - ¿Cómo me ves?
+- intent: atencion
+  examples: |
+    - oye.
+    - ey.
+    - tú.
+    - hey.
+- intent: cantidad
+  examples: |
+    - todo.
+    - todi.
+    - mucho.
+    - bastante.
+- intent: despedir
+  examples: |
+    - adios.
+    - bye.
+    - bye bye.
+    - chao.
+    - cuidate.
+    - hasta luego.
+    - hasta ahora.
+    - hasta la vista.
+    - hasta mañana.
+    - hasta nunca.
+    - que sea leve.
+    - que te vaya bien.
+    - que vaya bien.
+    - nos vemos.
+    - nos vemos luego.
+    - nos vemos mañana.
+    - ve con cuidado.
+- intent: empatizar
+  examples: |
+    - ¿qué tal?
+    - ¿qué tal estas?
+    - ¿qué tal te encuentras?
+    - ¿qué tal todo?
+    - ¿qué tal te va todo?
+    - ¿que tal tú?
+    - ¿tú que tal?
+    - ¿cómo estas?
+    - ¿cómo te encuentras?
+    - ¿cómo te va?
+    - ¿cómo estás?
+    - ¿Cómo estás?
+    - ¿cómo te sientes?
+    - ¿qué hay de nuevo?
+- intent: empatizar_bien
+  examples: |
+    - ¿estas bien?
+    - ¿te encuentras bien?
+- intent: estado_aburrimiento
+  examples: |
+    - muy aburrido.
+    - eso fue aburrido.
+    - estoy aburrido.
+    - aburrido.
+    - me estoy aburriendo.
+    - quedarse en casa es aburrido.
+    - me aburre.
+    - tuve un día lento.
+    - estoy muy aburrido.
+    - estoy un poco aburrido hoy.
+    - nunca me he aburrido mas.
+    - estaba aburrido.
+    - es aburrido.
+    - esto es aburrido.
+    - estamos todos aburridos.
+    - es muy aburrido.
+    - ya estoy aburrido.
+    - estoy loco de aburrimiento.
+- intent: estado_bien
+  examples: |
+    - bien.
+    - perfectamente.
+    - genial.
+    - de maravilla.
+    - con un día fantastico.
+    - hoy es un día increible!
+    - todo bien.
+    - estupendo.
+    - no me quejo.
+    - estoy bien.
+    - demasiado genial.
+    - estoy muy bien.
+    - sintiendome bien.
+    - estoy inspirado.
+    - es perfecto.
+    - estoy genial.
+    - estoy tan feliz.
+    - estoy realmente feliz ahora mismo.
+    - increible.
+    - me siento genial.
+    - me siento maravillosa.
+    - me siento muy bien.
+    - mejor que nunca.
+    - me siento afortunado.
+    - me siento feliz.
+    - muy bien.
+    - muy bien, gracias.
+    - bueno, ha sido un bien día.
+    - guay.
+    - pues aquí estamos.
+    - que gran día.
+    - tuve un gran día.
+    - todo genial aqui.
+    - yo estoy feliz.
+    - ¿yo?, ¡maravillosamente!
+- intent: estado_cansancio
+  examples: |
+    - estoy exhausto.
+    - he trabajado demasiado.
+    - estoy cansado.
+    - estoy agotado.
+    - me canso.
+    - estoy muy cansado.
+    - me estoy cansando.
+    - me siento cansado.
+    - estoy tan cansado.
+    - estoy completamente agotado.
+    - estaba cansado.
+    - estoy muerto de cansancio.
+    - estoy un poco cansado.
+    - estuve muy cansado.
+    - estoy realmente cansado.
+    - estoy terriblemente cansado.
+    - estoy algo cansado.
+    - pues aqui algo cansado.
+    - pues algo cansado.
+- intent: estado_emocion
+  examples: |
+    - estoy emocionado.
+    - estoy muy emocionado.
+    - no puedo empezar a decir lo emocionado que estoy.
+    - soy exagerada.
+    - me senti emocionado.
+    - fue emocionante.
+    - eso fue emocionante.
+    - que interesante!
+    - esto es tan divertido.
+- intent: estado_enfado
+  examples: |
+    - estoy enojado.
+    - me siento tan enojado.
+    - estoy tan molesto.
+    - es molesto.
+    - eso es agravante.
+    - estoy furioso.
+    - eso es exasperante.
+    - estoy muy enojado.
+    - todo me fastidia.
+    - estoy indignado.
+    - ¡eso es indignante!
+    - me siento hostil.
+    - estoy muy frustrado.
+    - me esta irritando.
+    - me siento tan ofendido.
+    - estoy lleno de furia.
+    - me siento muy beligerante.
+    - odio hacer esto.
+    - no tengo paciencia hoy.
+    - no pude controlar mi enojo.
+    - estoy molesto.
+    - estoy super molesto.
+    - estoy muy loco.
+    - estoy enfurecido.
+    - ¡esto es enloquecedor!
+    - estoy cabreado.
+    - puedes apostar que estoy enojado.
+    - eso me hizo enojar.
+    - me hiciste enojar.
+    - todavia estoy enojado por eso.
+- intent: estado_mal
+  examples: |
+    - mi día fue horrible.
+    - horrible.
+    - muy mal.
+    - mal.
+    - triste.
+    - algo triste.
+    - decaido.
+    - fue un día horrible.
+    - infeliz.
+    - estoy triste.
+    - no me siento muy bien.
+    - estoy decepcionado.
+    - esto es malo.
+    - estoy enfermo.
+    - estoy todo bajo hoy.
+    - es decepcionante.
+    - estoy irritado.
+    - no me estoy sintiendo bien.
+    - esto apesta!
+    - me siento muy mal.
+    - el peor día!
+    - esto se siente mal.
+    - me siento deprimido.
+    - todo esta mal hoy.
+    - me siento muy triste.
+    - se siente horrible.
+    - esto es deprimente.
+    - estoy deprimido.
+    - me siento aburrido.
+    - la vida es aburrida.
+    - me siento vacio.
+    - me siento inutil.
+    - deprimido.
+    - pesado.
+    - me siento bastante perdido.
+    - muy triste.
+    - malo.
+    - terrible.
+    - no muy bueno.
+    - extremadamente triste.
+    - me siento desanimado.
+    - me siento triste.
+    - no estoy bien.
+    - me siento mal.
+    - no es bueno.
+    - estoy Horrible.
+    - estoy inquieto.
+    - en realidad no estoy bien.
+    - estoy tan solo como puedo.
+    - estoy pasando por un momento bastante dificil.
+    - estoy de duelo.
+- intent: estado_miedo
+  examples: |
+    - estoy asustado.
+    - me siento asustado.
+    - estoy preocupado.
+    - estoy aterrado.
+    - eso es aterrador.
+    - me siento intimidado.
+    - eso es intimidante
+    - estoy petrificado.
+    - tengo miedo.
+    - me siento ansioso.
+    - tengo un mal presentimiento.
+    - entre en panico.
+    - me encogi de miedo.
+    - estoy muerto de miedo.
+    - estalle en un sudor frío.
+    - eso me sobresalto!
+    - me asusta facilmente.
+    - estoy temblando de miedo.
+    - estoy horrorizado.
+- intent: estado_nerviosismo
+  examples: |
+    - estoy nervioso.
+    - estoy estresado.
+    - me siento nervioso.
+    - estoy ansioso.
+    - me siento ansioso.
+    - esto es nervioso.
+    - siento que voy a vomitar.
+    - tengo un nudo en la garganta.
+    - tengo mariposas en mi estomago.
+    - soy un manojo de nervios.
+    - estoy empezando a sudar frío.
+    - le tengo miedo a mi propia sombra.
+    - soy como un gato sobre ladrillos calientes.
+    - estoy saltando fuera de mi piel.
+    - estoy al borde de mi ingenio.
+    - tengo la lengua atada.
+    - estoy al borde.
+    - estoy muy tenso.
+    - me siento incomoda.
+    - estoy alarmado.
+    - estoy preocupado.
+    - estoy tenso.
+    - estoy bajo mucho estres.
+    - estoy constantemente preocupado.
+    - siento una tension constante.
+    - sufro de ansiedad.
+    - me he sentido bastante ansioso ultimamente.
+    - mi ansiedad esta por las nubes estos días.
+    - me siento bastante inquieto.
+    - no puedo concentrarme porque estoy preocupado constantemente.
+    - estoy bajo un inmenso estres.
+    - han sido unos días dificiles. muy estresante.
+    - estoy bastante tenso.
+    - ha habido bastantes cambios en mi vida. 
+    - no creo que los este manejando bien. 
+    - es bastante estresante.
+    - me encuentro preocupando por cada pequeño detalle.
+    - soy un preocupado cronico.
+    - me siento bastante inquieto y una horda de preocupaciones me esta molestando.
+    - no puedo concentrarme debido a la gran cantidad de preocupaciones que me preocupan.
+- intent: estado_soledad
+  examples: |
+    - estoy solo.
+    - soy muy solitario.
+    - estoy tan solo.
+    - estoy realmente solo.
+    - me siento solo.
+    - soy un solitario.
+    - no tengo ninguna compa?ia.
+    - no tengo a nadie mas.
+    - siempre estoy sola.
+    - estoy completamente solo.
+    - vivo solo.
+    - me he acostumbrado a vivir solo.
+    - Creo que he estado viviendo solo demasiado tiempo.
+    - no tengo a nadie con quien hablar.
+    - sigo solo.
+    - estoy acostumbrado a vivir solo.
+- intent: identidad
+  examples: |
+    - ¿quién eres?
+    - ¿cómo te llamas?
+    - ¿cual es tu nombre?
+- intent: identidad_sn
+  examples: |
+    - ¿eres un bot?
+    - ¿eres un robot?
+    - ¿eres humano?
+    - ¿eres de este planeta?
+    - ¿eres una IA?
+    - ¿estoy hablando con una persona real?
+    - ¿eres una persona real?
+    - ¿eres siquiera una persona real?
+    - eres un bot ¿no?
+- intent: identidad_user
+  examples: |
+    - ¿sabes quien soy?
+    - ¿sabes quien soy yo?
+    - ¿quien soy yo?
+    - ¿me conoces?
+- intent: negar
+  examples: |
+    - nop.
+    - no.
+    - no realmente.
+    - claro que no.
+    - erroneo.
+    - pues no.
+    - para nada.
+    - absolutamente no.
+    - me niego.
+    - ni lo pienses.
+- intent: llamar
+  examples: |
+    - '[Carlos](avatar).'
+    - oye [Carlos](avatar).
+    - hey [Carlos](avatar).
+- intent: no_solicitar
+  examples: |
+    - en nada.
+    - no me interesa nada.
+    - no quiero nada.
+    - nada.
+    - Nada.
+    - nadi.
+- intent: saludar  
+  examples: |
+    - muy buenas.
+    - hola.
+    - holas.
+    - buenos días.
+    - buenas tardes.
+    - buenas noches.
+    - ¡hola!   
+- intent: silencio
+  examples: |
+    - silencio.
+    - callate.
+    - calla.
+    - para.
+    - espera.
+    - cierra la boca.
+    - guarda silencio.
+- intent: out_of_scope
+  examples: |
+    - quiero pedir comida.
+    - ¿qué es 2 + 2?
+    - ¿quién es el presidente de estados Unidos?
+    - ¿quién es el presi?.
+    - dime, ¿cuanto es 2 + 2?.
+    - ¿cuánto es 2 + 2?.
+    - ¿cuánto es 2 + 2?.
+    - ¿qué es 2 + 2?.
+
+- intent: pregunta_hora
+  examples: |
+    - ¿qué hora es?
+    - ¿Qué hora es?
+    - ¿podrías decirme la hora?
+    - ¿me dices la hora?
+
+- intent: pregunta_dia
+  examples: |
+    - ¿que día es?
+    - ¿en que día estamos?
+    - ¿en que día estoy?
+    - ¿podrías decirme que día es hoy?
+    - ¿me dices el día?
+    - ¿hoy que día es?

@@ -1,0 +1,173 @@
+﻿version: '2.0'
+session_config:
+  session_expiration_time: 36000
+  carry_over_slots_to_new_session: true
+
+intents:
+- rutina
+- rutina_proxima
+- rutina_anterior
+- register
+- login
+- iniciar_rutina
+- rutina_comprobacion
+- listo
+- demo_rutina
+
+responses:
+
+  utter_reloj:
+  - metadata:
+      subtext: preguntar     
+    text: ¿Tienes el reloj colocado?
+  - metadata:
+      subtext: preguntar     
+    text: ¿Dispones de tu reloj?
+  - metadata:
+      subtext: preguntar     
+    text: ¿Dispones de tu reloj para realizar las mediciones?
+
+  utter_preparado:
+  - metadata:
+      subtext: preguntar     
+    text: ¿Estás listo?
+  - metadata:
+      subtext: preguntar     
+    text: ¿Preparado para el entrenamiento?
+  - metadata:
+      subtext: preguntar     
+    text: ¿Estás preparado para el entrenamiento?
+
+  utter_avisado:
+  - metadata:
+      subtext: informar     
+    text: Avísame cuando estés listo
+
+  utter_no_reloj:
+  - metadata:
+      subtext: informar     
+    text: Recuerda que sin el reloj no podré comprobar tus datos biométricos.
+
+  utter_rutina:
+  - metadata:
+      subtext: informar     
+    text: Tienes esta rutina
+  - metadata:
+      subtext: informar 
+    text: Hoy toca hacer esto.    
+
+  utter_no_rutina:
+  - metadata:
+      subtext: informar
+    text: No hay resultados.    
+
+  - metadata:
+      subtext: informar
+    text: No tienes rutina para hoy.     
+
+  utter_rutina_proxima:
+  - metadata:
+      subtext: informar
+    text: Tendrás esta rutina.
+
+  utter_no_utina_proxima:    
+  - metadata:
+      subtext: informar 
+    text: No tienes nada programado para mañana.    
+
+  utter_rutina_anterior:
+  - metadata:
+      subtext: informar 
+    text: Tuviste esta rutina.
+ 
+  utter_no_rutina_anterior:
+  - metadata:
+      subtext: informar
+    text: No hay datos registrados del día de ayer.
+   
+  utter_con_rutina:
+  - metadata:
+      subtext: informar     
+    text: Sí, tienes una rutina para hoy.    
+  - metadata:
+      subtext: informar     
+    text: Sí, tienes una sesión programada para hoy.
+
+  utter_sin_rutina:
+  - metadata:
+      subtext: informar  
+    text: No, no hay ninguna rutina programada para hoy.
+
+  utter_iniciar_rutina:
+  - metadata:
+      subtext: informar     
+    text: De acuerdo, voy preparando la rutina.
+
+  utter_register:
+  - metadata:
+      subtext: informar     
+    text: Abriendo interfaz de registro
+
+  utter_login:
+  - metadata:
+      subtext: informar     
+    text: Abriendo interfaz de inicio de sesión
+
+  utter_ejercicio:
+  - metadata:
+      subtext: informar     
+    text: Vamos con el primer ejercicio
+  - metadata:
+      subtext: informar     
+    text: Iniciemos con el primer ejercicio
+
+  utter_descanso:
+  - metadata:
+      subtext: informar     
+    text: Un momento para respirar y cargar pilas.
+  - metadata:
+      subtext: informar     
+    text: Aprovecha para soltar un poco la tensión.
+  - metadata:
+      subtext: informar     
+    text: ¿Sintientes esos músculos trabajando? ¡Vamos por más!
+  - metadata:
+      subtext: informar     
+    text: Siéntete libre de estirar un poco si lo necesitas.
+  - metadata:
+      subtext: informar     
+    text: ¡Venga, a recuperar el aliento!
+
+  utter_siguiente_ejercicio:
+  - metadata:
+      subtext: informar     
+    text: Venga, a por el siguiente ejercicio
+  - metadata:
+      subtext: informar     
+    text: ¡Mantengan esa energía! Es hora de arrancar con el siguiente.
+
+  utter_eje:
+  - text: Venga, vamos con {ejercicio}
+  - text: Venga, ahora vamos con {ejercicio}
+  - text: Toca {ejercicio}
+  - text: Ahora toca {ejercicio}
+  - text: Ahora haremos {ejercicio}
+  - text: Ahora un poco de {ejercicio}
+
+  utter_eje_preparate:
+  - metadata:
+      subtext: informar     
+    text: Ponte en posición.
+
+  utter_demo_rutina:
+  - metadata:
+      subtext: informar     
+    text: Empecemos con la rutina de hoy.
+
+  utter_fin_rutina:
+  - metadata:
+      subtext: informar     
+    text: Ya hemos acabado por hoy.
+  - metadata:
+      subtext: informar     
+    text: Listo, ya hemos acabado por hoy.

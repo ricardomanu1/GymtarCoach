@@ -1,0 +1,78 @@
+version: "2.0"
+nlu:
+
+- intent: register
+  examples: |
+    - Quiero registrarme
+    - Quiero realizar el registro
+    - registro
+    - Dejame registrarme
+    - ¿Puedo registrarme?
+
+- intent: login
+  examples: |
+    - Quiero iniciar sesión
+    - Abrir inicio de sesión
+    - Iniciar sesión
+    - Login
+
+- intent: iniciar_rutina
+  examples: |
+    - Quiero iniciar rutina
+    - Quiero iniciar la sesión
+    - Iniciar la sesión de ejercicio
+    - Inicia la rutina
+    - Iniciar rutina
+    - Inicia la rutina de hoy
+    - Inicia la sesión de hoy
+    - Iniciar rutina
+    - Iniciar sesión
+    - Quiero empezar la rutina
+    - Quiero empezar la sesión
+    - Quiero iniciar la sesión de hoy
+
+- intent: rutina
+  examples: |
+    - ¿Qué rutina tengo hoy?
+    - ¿Qué rutina tengo para hoy?
+    - ¿Qué toca hoy?
+    - ¿Cuál es el entrenamiento de hoy?
+    - ¿Qué tengo que hacer hoy?
+    - que me toca hoy?
+    - que tengo hoy?
+    - quiero saber que rutina tengo hoy
+
+- intent: rutina_proxima
+  examples: |
+    - ¿Cuales seran mis próximas rutina?
+    - ¿Qué tocara hacer estos días?
+    - ¿Qué rutina tengo mañana?
+    - que rutina tengo mañana
+
+- intent: rutina_anterior
+  examples: |
+    - ¿Cuál fue mi úlima rutina?
+    - ¿Qué fue lo último que hice?
+    - ¿Qué rutina tuve ayer?
+    - ¿Qué hice ayer?
+    - ¿Cuál fue la rutina de ayer?
+
+- intent: rutina_comprobacion
+  examples: |
+    - ¿Tengo rutina para hoy?
+    - ¿Tengo que hacer algo hoy?
+    - ¿Hoy tengo rutina?
+    - Hoy tengo rutina.
+
+- intent: listo
+  examples: |
+    - Estoy listo
+    - Estoi listo
+    - estoy ready
+    - Ya puedes darle
+
+- intent: demo_rutina
+  examples: |
+    - Realiza la rutina
+    - Rutina demo
+    - Demo rutina

@@ -1,0 +1,61 @@
+# The config recipe.
+# https://rasa.com/docs/rasa/model-configuration/
+recipe: default.v1
+
+# Configuration for Rasa NLU.
+# https://rasa.com/docs/rasa/nlu/components/
+language: "es"
+
+pipeline:
+  - name: "SpacyNLP"
+    model: "es_core_news_md"
+    case_sensitive: false 
+  - name: WhitespaceTokenizer
+  #- name: SpacyTokenizer
+  # Codificacion de la palabra
+  # De caracter disperso, reconocimiento de entidades
+  #- name: SpacyFeaturizer
+  #  pooling: mean
+  - name: RegexFeaturizer
+  #  case_sensitive: false
+  - name: LexicalSyntacticFeaturizer
+  - name: CountVectorsFeaturizer
+  - name: CountVectorsFeaturizer
+    analyzer: "char_wb"
+    min_ngram: 1
+    max_ngram: 4
+  - name: "CRFEntityExtractor"
+    # clasificador de intencion y extraccion de entidad
+  - name: DIETClassifier
+    epochs: 50
+    constrain_similarities: true
+  # extraccion de entidad con agregacion de informacion
+  - name: RegexEntityExtractor
+    case_sensitive: False
+    use_lookup_tables: True
+    use_regexes: True
+    "use_word_boundaries": True
+  #- name: SpacyEntityExtractor
+  # componente extraccion de sinonimos en entidades
+  - name: EntitySynonymMapper
+  - name: ResponseSelector
+    epochs: 100
+    constrain_similarities: true
+  #- name: FallbackClassifier
+  #  threshold: 0.6
+  #  ambiguity_threshold: 0.01
+# Configuration for Rasa Core.
+# https://rasa.com/docs/rasa/core/policies/
+policies:
+  # Comprobacion de historias y prediccion de la siguiente accion
+  - name: MemoizationPolicy 
+  #   - name: UnexpecTEDIntentPolicy
+  #     max_history: 5
+  #     epochs: 100
+  - name: TEDPolicy
+    max_history: 5
+    epochs: 400
+    constrain_similarities: true
+  # Prediccion basada en reglas  
+  - name: RulePolicy
+  #- name: MappingPolicy

@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\actions",
+    "\\data",
+    "\\DDBB",
+    "\\domains",
+    "\\EBDI",
+    "\\Intents",
+    "\\VoiceManager"
+  ],
+  "SelectedNode": "\\VoiceManager\\STT.py",
+  "PreviewInSolutionExplorer": false
+}
