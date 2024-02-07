@@ -82,12 +82,14 @@ while True:
             #if keyboard.is_pressed('q'): #result.reason == speechsdk.ResultReason.RecognizedKeyword:
             print("Di algo...")
             # Waiting for sentence (maximum of 15 seconds of audio)
-            result = recognizer.recognize_once()
             start_time = time.time()
+            result = recognizer.recognize_once()
+            print("--- %s seconds (pickup) ---" % (time.time() - start_time))
             # System to detect emotion from audio
             emotion = random.choice(Emotions)            
             # Language recognition in first iteration
-            if result.reason == speechsdk.ResultReason.RecognizedSpeech:                  
+            if result.reason == speechsdk.ResultReason.RecognizedSpeech:   
+                start_time = time.time()
                 print("Input: {} <{}>".format(result.text,emotion))
                 if (str(result.text) == 'Apagar sistema.'):
                     print("Apagando sistema...")
@@ -99,7 +101,10 @@ while True:
                 # emotion = SentimentToEmotion(sentiment_analysis)
                 # Send the spanish translation to Rasa
                 text_trans = Translator.translator(result.text,lang,'es')
+                print("--- %s seconds (audio processing) ---" % (time.time() - start_time))
+                start_time = time.time()
                 Interaction.say(text_trans,lang,emotion,sentiment_analysis)
+                print("--- %s seconds (Json generation & sending to rasa)---" % (time.time() - start_time))
                 os.remove('listening.txt')
             elif result.reason == speechsdk.ResultReason.NoMatch:
                 print("No speech could be recognized: {}".format(result.no_match_details))
@@ -107,8 +112,7 @@ while True:
                 print("Translation canceled: {}".format(result.cancellation_details.reason))
                 if result.cancellation_details.reason == speechsdk.CancellationReason.Error:
                     print("Error details: {}".format(result.cancellation_details.error_details))
-                    break
-            print("--- %s seconds ---" % (time.time() - start_time))
+                    break            
     except Exception as e :
         continue
 
