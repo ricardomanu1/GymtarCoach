@@ -69,8 +69,8 @@ class intents_manager(object):
         ## De UNREAL
         self.intents.append(('say','demo_rutina',['demo_rutina','with_routine'],'a_dB','demo_rutina','a_say','utter_demo_rutina','a_say','utter_ejercicio','co','siguiente_ejercicio',
                              'a_say','utter_descanso','co','siguiente_ejercicio','a_say','utter_descanso','co','siguiente_ejercicio','a_say','utter_fin_rutina'))
-        self.intents.append(('know','solicito_ejercicio',['solicito_ejercicio'],'a_dB','solicito_ejercicio','a_say','utter_eje')) #utter_eje_preparate
-        self.intents.append(('know','solicito_descanso',['solicito_descanso'],'a_dB','solicito_descanso','a_say','utter_descanso')) 
+        self.intents.append(('know','solicito_ejercicio',['solicito_ejercicio'],'a_dB','solicito_ejercicio','a_say','utter_eje','ki','k_observa')) #utter_eje_preparate
+        self.intents.append(('know','solicito_descanso',['solicito_descanso'],'a_dB','solicito_descanso','a_say','utter_descanso','ki','k_observa')) 
 
         self.intents.append(('know','descanso',['descanso'],'a_dB','descanso','a_say','utter_descanso'))
    

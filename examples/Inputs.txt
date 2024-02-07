@@ -18,3 +18,17 @@
     "message": "register",
     "metadata": {"event":"know","language":"es-ES"} 
 }
+
+## Solicita ejercicio
+{
+    "sender": "Gymtar_u",
+    "message": "solicito_ejercicio",
+    "metadata": {"event":"know","ejercicio":2}
+}
+
+## Solicita descanso
+{
+    "sender": "Gymtar_u",
+    "message": "solicito_descanso",
+    "metadata": {"event":"know"}
+}

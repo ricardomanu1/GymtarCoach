@@ -23,7 +23,7 @@ ws = websocket.WebSocket()
 ws.connect("ws://127.0.0.1:5059/")  # Asegúrate de que la dirección y el puerto coincidan
 
 # Define el ID del cliente (puedes asignar un ID único)
-client_id = 2
+client_id = 1
 content_list = [] 
 content_joined = [] 
 
@@ -104,7 +104,7 @@ while True:
                     # Reading SSML file
                     ssml_string = open("Response/respuesta.xml", "r+", encoding="utf-8").read()
 
-                    send_message(contents, polarity,body_anim, recipient=1)
+                    send_message(contents, polarity,body_anim, recipient=2)
 
                     # Audio generated
                     result = speech_synthesizer.speak_ssml_async(ssml_string).get()

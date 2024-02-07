@@ -5,7 +5,7 @@ from datetime import datetime
 class database:
 
     def login(self,id,password):
-        url = f"http://ec2-16-170-250-70.eu-north-1.compute.amazonaws.com:5000/usuario?id={id}"
+        url = f"http://ec2-16-170-250-70.eu-north-1.compute.amazonaws.com:5000/usuarios?id={id}"
         try:
             response = requests.get(url)
             if response.status_code == 200:        
