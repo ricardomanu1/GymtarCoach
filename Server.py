@@ -1,5 +1,5 @@
 # coding=utf-8
-import logging
+import logging, time
 import requests
 import json
 from websocket_server import WebsocketServer #pip install websocket_server
@@ -25,6 +25,7 @@ def client_left(client, server):
         del connected_clients[client_id]
 
 def message_back(client, server, message):
+    start_time = time.time()
     # Guarda el mensaje en json
     data = json.loads(message)
     # Tomamoes la respuesta
@@ -50,6 +51,7 @@ def message_back(client, server, message):
             print("Unreal ha enviado algo")
             print(data)
             r = requests.post(url_R, json=data)
+    print("--- %s seconds (server) ---" % (time.time() - start_time))
 
 def run_websocket_server():
     # Create a new websocket server object

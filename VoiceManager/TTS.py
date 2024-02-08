@@ -69,7 +69,8 @@ while True:
     if os.path.exists('..\\speech.csv'):            
         with open('..\\speech.csv','r') as f:            
             csv_reader = csv.DictReader(f)
-            for row in csv_reader:         
+            for row in csv_reader:  
+                start_time = time.time()
                 print("--------------------------------------------------------")
                 if(str(row['action'])=="say"): 
                     start_time = time.time()     
@@ -101,29 +102,32 @@ while True:
                         # Sentence translation
                         text_trans = Translator.translator(contents,'es',lang[0:2])
                         XML.enSSML(text_trans,emotionAzure,lang)       
-                    # Reading SSML file
+                    # Reading SSML file                    
                     ssml_string = open("Response/respuesta.xml", "r+", encoding="utf-8").read()
+                    time_per_phrase = (time.time() - start_time)
+                    print("--- %s seconds (SSML generated) ---" % time_per_phrase)
 
                     send_message(contents, polarity,body_anim, recipient=2)
-
-                    # Audio generated
+                    
+                    start_time2 = time.time()   
+                    # Audio generated                    
                     result = speech_synthesizer.speak_ssml_async(ssml_string).get()
-                    # Audio memory stream to file
+                    # Audio memory stream to file                    
                     stream = AudioDataStream(result)
-                    time_per_phrase = (time.time() - start_time)
-                    print("Time per phrase = %s seconds " % time_per_phrase)
+                    time_per_phrase = (time.time() - start_time2)
+                    print("--- %s seconds (audio generated) --- " % time_per_phrase)
                     #stream.save_to_wav_file("Response/respuesta.wav")
                     # Checking the result
                     if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
                         duration = result.audio_duration.total_seconds()                      
                         print("Virtual personal trainer: {} <{}>".format(text_trans,emotion))
                         print("Audio duration: {} seconds.".format(duration))
-                        print("Processing time per phrase = %s seconds " % (time_per_phrase-duration))
+                        # print("Processing time per phrase = %s seconds " % (time_per_phrase-duration))
                     elif result.reason == speechsdk.ResultReason.Canceled:
                         cancellation_details = result.cancellation_details
                         print("Speech synthesis canceled: {}".format(cancellation_details.reason))
                         if cancellation_details.reason == speechsdk.CancellationReason.Error:
-                            print("Error details: {}".format(cancellation_details.error_details))                    
+                            print("Error details: {}".format(cancellation_details.error_details))                         
                 elif(str(row['action'])=="listen"):
                     archi1 = open("listening.txt","w") 
                     archi1.close()                     
@@ -140,5 +144,6 @@ while True:
                     output.write('\n'.join(lines))
                     output.close()
                     print("Accion: abrir interface")
+                print("--- %s seconds (response to audio) ---" % (time.time() - start_time))
         os.remove('..\\speech.csv')        
         

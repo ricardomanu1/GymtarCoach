@@ -1,4 +1,4 @@
-import csv, json, os, typing
+import csv, json, os, typing, time
 from pickle import NONE
 import datetime as dt
 import xml.etree.cElementTree as ET
@@ -143,6 +143,7 @@ class ChatBot(Action):
         global id_user, ejercicio
 
         print("-------------------------------------------------------------------------------")
+        start_time = time.time()   
         
         inter1 = True
 
@@ -204,6 +205,8 @@ class ChatBot(Action):
         print('EVENT: ' + str(user_event)) 
         EBDI.run(self, dispatcher, tracker, domain, user_event)
         
+        print("--- %s seconds (response generated) ---" % (time.time() - start_time))
+
         return [SlotSet("daytime", slot_daytime),
                 SlotSet("rol", slot_rol), SlotSet("avatar", slot_avatar),
                 SlotSet("name", slot_name), SlotSet("ejercicio", slot_ejercicio)]
