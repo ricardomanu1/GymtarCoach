@@ -114,15 +114,14 @@ while True:
                     result = speech_synthesizer.speak_ssml_async(ssml_string).get()
                     # Audio memory stream to file                    
                     stream = AudioDataStream(result)
-                    time_per_phrase = (time.time() - start_time2)
-                    print("--- %s seconds (audio generated) --- " % time_per_phrase)
+                    time_per_phrase = (time.time() - start_time2)                   
                     #stream.save_to_wav_file("Response/respuesta.wav")
                     # Checking the result
                     if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
                         duration = result.audio_duration.total_seconds()                      
+                        print("--- %s seconds (audio generated) --- " % (time_per_phrase-duration))
                         print("Virtual personal trainer: {} <{}>".format(text_trans,emotion))
                         print("Audio duration: {} seconds.".format(duration))
-                        # print("Processing time per phrase = %s seconds " % (time_per_phrase-duration))
                     elif result.reason == speechsdk.ResultReason.Canceled:
                         cancellation_details = result.cancellation_details
                         print("Speech synthesis canceled: {}".format(cancellation_details.reason))
@@ -144,6 +143,6 @@ while True:
                     output.write('\n'.join(lines))
                     output.close()
                     print("Accion: abrir interface")
-                print("--- %s seconds (response to audio) ---" % (time.time() - start_time))
+                print("--- %s seconds (Processing time per phrase) ---" % (time.time() - start_time))
         os.remove('..\\speech.csv')        
         

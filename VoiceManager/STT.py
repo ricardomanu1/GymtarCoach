@@ -102,9 +102,9 @@ while True:
                 # Send the spanish translation to Rasa
                 text_trans = Translator.translator(result.text,lang,'es')
                 print("--- %s seconds (audio processing) ---" % (time.time() - start_time))
-                start_time = time.time()
+                start_time2 = time.time()
                 Interaction.say(text_trans,lang,emotion,sentiment_analysis)
-                print("--- %s seconds (Json generation & sending to rasa)---" % (time.time() - start_time))
+                print("--- %s seconds (Json generation & sending to rasa)---" % (time.time() - start_time2))
                 os.remove('listening.txt')
             elif result.reason == speechsdk.ResultReason.NoMatch:
                 print("No speech could be recognized: {}".format(result.no_match_details))
