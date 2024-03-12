@@ -18,51 +18,62 @@ responses:
 
   utter_reloj:
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar 
+      video: "01"    
     text: ¿Tienes el reloj colocado?
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar 
+      video: "01"
     text: ¿Dispones de tu reloj?
   - metadata:
       subtext: preguntar     
+      video: "01"
     text: ¿Dispones de tu reloj para realizar las mediciones?
 
   utter_preparado:
   - metadata:
       subtext: preguntar     
+      video: "02"
     text: ¿Estás listo?
   - metadata:
       subtext: preguntar     
+      video: "03"
     text: ¿Preparado para el entrenamiento?
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar    
+      video: "03" 
     text: ¿Estás preparado para el entrenamiento?
 
   utter_avisado:
   - metadata:
       subtext: informar     
+      video: "04"
     text: Avísame cuando estés listo
 
   utter_no_reloj:
   - metadata:
-      subtext: informar     
+      subtext: informar 
+      video: "05"    
     text: Recuerda que sin el reloj no podré comprobar tus datos biométricos.
 
   utter_rutina:
   - metadata:
-      subtext: informar     
+      subtext: informar  
+      video: "06"   
     text: Tienes esta rutina
   - metadata:
-      subtext: informar 
+      subtext: informar
+      video: "06" 
     text: Hoy toca hacer esto.    
 
   utter_no_rutina:
   - metadata:
       subtext: informar
-    text: No hay resultados.    
-
+      video: "07"
+    text: No hay resultados.   
   - metadata:
       subtext: informar
+      video: "07"
     text: No tienes rutina para hoy.     
 
   utter_rutina_proxima:
@@ -88,19 +99,23 @@ responses:
   utter_con_rutina:
   - metadata:
       subtext: informar     
+      video: "08"
     text: Sí, tienes una rutina para hoy.    
   - metadata:
       subtext: informar     
+      video: "08"
     text: Sí, tienes una sesión programada para hoy.
 
   utter_sin_rutina:
   - metadata:
       subtext: informar  
+      video: "07"
     text: No, no hay ninguna rutina programada para hoy.
 
   utter_iniciar_rutina:
   - metadata:
-      subtext: informar     
+      subtext: informar  
+      video: "09"   
     text: De acuerdo, voy preparando la rutina.
 
   utter_register:
@@ -116,26 +131,33 @@ responses:
   utter_ejercicio:
   - metadata:
       subtext: informar     
+      video: "10"
     text: Vamos con el primer ejercicio
   - metadata:
-      subtext: informar     
+      subtext: informar 
+      video: "10"      
     text: Iniciemos con el primer ejercicio
 
   utter_descanso:
   - metadata:
-      subtext: informar     
+      subtext: informar  
+      video: "11"   
     text: Un momento para respirar y cargar pilas.
   - metadata:
       subtext: informar     
+      video: "12"
     text: Aprovecha para soltar un poco la tensión.
   - metadata:
       subtext: informar     
+      video: "13"
     text: ¿Sientes esos músculos trabajando? ¡Vamos por más!
   - metadata:
       subtext: informar     
+      video: "14"
     text: Siéntete libre de estirar un poco si lo necesitas.
   - metadata:
       subtext: informar     
+      video: "14"
     text: ¡Venga, a recuperar el aliento!
 
   utter_siguiente_ejercicio:
@@ -167,7 +189,9 @@ responses:
   utter_fin_rutina:
   - metadata:
       subtext: informar     
+      video: "15"
     text: Ya hemos acabado por hoy.
   - metadata:
       subtext: informar     
+      video: "15"
     text: Listo, ya hemos acabado por hoy.

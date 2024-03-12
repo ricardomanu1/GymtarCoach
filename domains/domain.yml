@@ -80,19 +80,24 @@ responses:
 # Afirmativo
   utter_afirmativo:
   - metadata:
-      subtext: informar     
+      subtext: informar                 
+      video: "29"
     text: De acuerdo.
   - metadata:
-      subtext: informar     
+      subtext: informar         
+      video: "29"  
     text: Vale.
   - metadata:
-      subtext: informar     
+      subtext: informar        
+      video: "29"   
     text: Bien.
   - metadata:
-      subtext: informar     
+      subtext: informar           
+      video: "29"
     text: Correcto.
   - metadata:
-      subtext: informar     
+      subtext: informar         
+      video: "29"  
     text: Estupendo.
 
 # agradecimientos
@@ -163,13 +168,16 @@ responses:
 # Despedir
   utter_despedir:
   - metadata:
-      subtext: despedir     
+      subtext: despedir        
+      video: "30"   
     text: Espero verte pronto.
   - metadata:
-      subtext: despedir     
+      subtext: despedir        
+      video: "30"  
     text: Hasta luego.
   - metadata:
-      subtext: despedir     
+      subtext: despedir        
+      video: "30"   
     text: Adiós.
   - metadata:
       subtext: despedir     
@@ -235,22 +243,27 @@ responses:
       subtext: informar     
     text: Qué mal.
   - metadata:
-      subtext: informar     
+      subtext: informar           
+      video: "25"
     text: Lo siento.
 
 # Empatizar al cansancio
   utter_empatizar_cansancio:
   - metadata:
-      subtext: informar     
+      subtext: informar        
+      video: "17"   
     text: Procura hidratarte y descansar lo suficiente.
   - metadata:
-      subtext: informar     
+      subtext: informar          
+      video: "17" 
     text: Aliméntate bien para recuperar las energías.
   - metadata:
-      subtext: informar     
+      subtext: informar           
+      video: "17"
     text: ¿Quieres descansar?.
   - metadata:
-      subtext: informar     
+      subtext: informar         
+      video: "17"
     text: ¿Te gustaría descansar?.
 
 # Empatizar a la emocion
@@ -271,7 +284,8 @@ responses:
 # El usuario esta bien
   utter_estado_bien:
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar        
+      video: "16"
     text: ¿Te encuentras bien?
 
 # El usuario esta cansando
@@ -378,19 +392,24 @@ responses:
 # Interes por el usuario
   utter_interes:
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar           
+      video: "23"
     text: ¿Qué tal {name}?
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar           
+      video: "23"
     text: ¿Qué tal estás {name}?
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar              
+      video: "23" 
     text: ¿Qué te cuentas {name}?
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar               
+      video: "23"
     text: ¿Cómo te encuentras {name}?
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar               
+      video: "23"
     text: ¿Cómo estás {name}?
 
 # Negar
@@ -417,25 +436,31 @@ responses:
 # No se tiene respuesta en el dominio
   utter_out_of_scope:
   - metadata:
-      subtext: informar     
+      subtext: informar        
+      video: "24"   
     text: No sé responder esa solicitud.
   - metadata:
-      subtext: informar     
+      subtext: informar                 
+      video: "24"
     text: No sé responderte esa solicitud.
   - metadata:
-      subtext: informar     
+      subtext: informar       
+      video: "27"
     text: Se escapa a mis conocimientos.
   - metadata:
-      subtext: informar     
+      subtext: informar           
+      video: "24"
     text: Aún no tengo tantos conocimientos.
 
 # No se escucha sonido o solo hay ruido
   utter_please_rephrase:
   - metadata:
-      subtext: informar     
+      subtext: informar        
+      video: "26"   
     text: Lo siento. No te he entendido bien, ¿podrías repetirlo?
   - metadata:
-      subtext: informar     
+      subtext: informar           
+      video: "26"
     text: Disculpa, no estaba atenta, ¿Qué has dicho?
 
 # Saludo a una persona conocida
@@ -484,14 +509,16 @@ responses:
         value: "morning"
     text: "Buenos días."
     metadata:
-      subtext: saludar 
+      subtext: saludar       
+      video: "21"
   - condition:
       - type: slot
         name: daytime
         value: "afternoon"
     text: "Buenas tardes."
     metadata:
-      subtext: saludar 
+      subtext: saludar       
+      video: "22"
   - condition:
       - type: slot
         name: daytime
@@ -500,10 +527,12 @@ responses:
     metadata:
       subtext: saludar 
   - metadata:
-      subtext: saludar
+      subtext: saludar      
+      video: "21"
     text: Hola.
   - metadata:
-      subtext: saludar
+      subtext: saludar      
+      video: "21"
     text: Muy buenas.
 
 # silencio
@@ -527,16 +556,19 @@ responses:
       subtext: preguntar     
     text: ¿En qué puedo ayudarte?
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar                 
+      video: "28"
     text: ¿Cómo puedo ayudarte?
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar         
+      video: "28"  
     text: Dime, ¿En qué te puedo ayudar?
   - metadata:
       subtext: preguntar     
     text: ¿Necesitas algo?
   - metadata:
-      subtext: preguntar     
+      subtext: preguntar           
+      video: "28"
     text: ¿Qué puedo hacer por ti?
 
 actions:

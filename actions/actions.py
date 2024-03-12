@@ -561,8 +561,9 @@ class CSV():
         global exercise_say, exercise_current
         output_csv = open('speech.csv','w+',newline='')
         writer = csv.writer(output_csv, delimiter =',')
-        writer.writerow(['action','response','emotion','language','animation','emotionAzure','video','length','avatar'])
+        writer.writerow(['action','response','emotion','language','animation','emotionAzure','video_au','length','avatar'])
         animation_tag = 'informar'  
+        video_au = '00'  
         video = ''  
         length = 0        
         for response in responses:
@@ -571,6 +572,10 @@ class CSV():
                     animation_tag = str(response['metadata']['metadata']['subtext'])                    
                 else:
                     animation_tag = slot_animacion
+                if 'video' in response['metadata']['metadata']:
+                    video_au = str(response['metadata']['metadata']['video'])                    
+                else:
+                    video_au = "00"
                 if 'img' in response['metadata']['metadata']:
                     video = str(response['metadata']['metadata']['img'])
                 else:
@@ -582,7 +587,8 @@ class CSV():
             else:
                 animation_tag = slot_animacion
             print(' - ' + str(response['text']))
-            writer.writerow(['say',str(response['text']), str(Emotions.estado),lang,animation_tag,str(Emotions.tag()),str(video),length,avatar])
+            print(' - ' + str(video_au))
+            writer.writerow(['say',str(response['text']), str(Emotions.estado),lang,animation_tag,str(Emotions.tag()),str(video_au),length,avatar])
         if(watch):
             writer.writerow(['watch',str(watchResponse)])
             watch = False
@@ -591,12 +597,12 @@ class CSV():
             interface = False
         elif(routine_say):
             for i,exercise in enumerate(exercises):
-                writer.writerow(['say',str(exercise), str(Emotions.estado),lang,animations[i],str(Emotions.tag()),str(video),length,avatar])
+                writer.writerow(['say',str(exercise), str(Emotions.estado),lang,animations[i],str(Emotions.tag()),str(video_au),length,avatar])
             routine_say = False
             writer.writerow(['listen'])
         elif(exercise_say):            
             text_exercise = "Realizaremos unas " + str(exercise_current)
-            writer.writerow(['say',str(text_exercise), str(Emotions.estado),lang,animation_tag,str(Emotions.tag()),str(video),length,avatar])
+            writer.writerow(['say',str(text_exercise), str(Emotions.estado),lang,animation_tag,str(Emotions.tag()),str(video_au),length,avatar])
             exercise_say = False
             writer.writerow(['listen'])
         else:

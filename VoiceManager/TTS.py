@@ -7,6 +7,7 @@ from azure.cognitiveservices.speech.audio import AudioOutputConfig
 from XML import XML
 from translator import translator
 from sentiment import sentiment
+import pygame
 
 ## LICENSES
 with open('..\\..\\AzureKeys.txt') as f:
@@ -51,6 +52,22 @@ audio_config = speechsdk.audio.AudioOutputConfig(use_default_speaker=True)
 #audio_config = speechsdk.AudioConfig(use_default_microphone=False, filename = "Response/response.wav")
 speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config,audio_config=audio_config)
 
+def reproducir_audio(nombre_archivo):
+    pygame.init()
+    pygame.mixer.init()
+
+    try:
+        pygame.mixer.music.load(nombre_archivo)
+        pygame.mixer.music.play()
+
+        while pygame.mixer.music.get_busy():
+            pygame.time.Clock().tick(10)
+    except pygame.error as e:
+        print(f'Error al reproducir el archivo: {e}')
+
+    pygame.mixer.quit()
+    pygame.quit()
+
 # Función para enviar un mensaje al servidor
 def send_message(content,polarity,body_anim, recipient):
     message = {
@@ -84,7 +101,7 @@ while True:
                     # Emotional tag for Azure
                     emotionAzure = str(row['emotionAzure'])     
                     # multimedia content
-                    video = str(row['video'])
+                    video = str(row['video_au'])
                     # multimedia content
                     length = float(row['length']) 
                     # Language
@@ -110,23 +127,36 @@ while True:
                     send_message(contents, polarity,body_anim, recipient=2)
                     
                     start_time2 = time.time()   
-                    # Audio generated                    
-                    result = speech_synthesizer.speak_ssml_async(ssml_string).get()
-                    # Audio memory stream to file                    
-                    stream = AudioDataStream(result)
-                    time_per_phrase = (time.time() - start_time2)                   
-                    #stream.save_to_wav_file("Response/respuesta.wav")
-                    # Checking the result
-                    if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
-                        duration = result.audio_duration.total_seconds()                      
-                        print("--- %s seconds (audio generated) --- " % (time_per_phrase-duration))
-                        print("Virtual personal trainer: {} <{}>".format(text_trans,emotion))
-                        print("Audio duration: {} seconds.".format(duration))
-                    elif result.reason == speechsdk.ResultReason.Canceled:
-                        cancellation_details = result.cancellation_details
-                        print("Speech synthesis canceled: {}".format(cancellation_details.reason))
-                        if cancellation_details.reason == speechsdk.CancellationReason.Error:
-                            print("Error details: {}".format(cancellation_details.error_details))                         
+                    if (video == "00"):  
+                        # Audio generated                    
+                        result = speech_synthesizer.speak_ssml_async(ssml_string).get()
+                        # Audio memory stream to file       
+                               
+                        stream = AudioDataStream(result)
+                        
+                        time_per_phrase = (time.time() - start_time2)                   
+                        #stream.save_to_wav_file("Response/respuesta.wav")
+                        # Checking the result                        
+                        if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
+                            duration = result.audio_duration.total_seconds()                      
+                            print("--- %s seconds (audio generated) --- " % (time_per_phrase-duration))
+                            print("Virtual personal trainer: {} <{}>".format(text_trans,emotion))
+                            print("Audio duration: {} seconds.".format(duration))
+                        elif result.reason == speechsdk.ResultReason.Canceled:
+                            cancellation_details = result.cancellation_details
+                            print("Speech synthesis canceled: {}".format(cancellation_details.reason))
+                            if cancellation_details.reason == speechsdk.CancellationReason.Error:
+                                print("Error details: {}".format(cancellation_details.error_details))  
+                    else:
+                        print(video)
+                        archivo = f"{video}.mp3"
+                        directorio_actual = os.path.dirname(os.path.abspath(__file__))
+                        directorio = os.path.abspath(os.path.join(directorio_actual, "..", ".."))    
+                        ruta_completa = directorio + "/Audios/" + archivo
+                        print(ruta_completa)
+                        if os.path.exists(ruta_completa):                            
+                            reproducir_audio(ruta_completa)
+
                 elif(str(row['action'])=="listen"):
                     archi1 = open("listening.txt","w") 
                     archi1.close()                     
