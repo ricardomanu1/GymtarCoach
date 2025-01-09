@@ -5,7 +5,7 @@ from datetime import datetime
 class database:
 
     def login(self,id,password):
-        url = f"http://ec2-16-170-250-70.eu-north-1.compute.amazonaws.com:5000/usuarios?id={id}"
+        url = f"http://ec2-3-88-193-156.compute-1.amazonaws.com:5000/usuarios?id={id}"
         try:
             response = requests.get(url)
             if response.status_code == 200:        
@@ -29,7 +29,7 @@ class database:
 
     def select_routine(self,id,date):
         print(date)
-        url = f"http://ec2-16-170-250-70.eu-north-1.compute.amazonaws.com:5000/sesion?id={id}"
+        url = f"http://ec2-3-88-193-156.compute-1.amazonaws.com:5000/sesion?id={id}"
         try:
             response = requests.get(url)
             if response.status_code == 200:        
@@ -57,7 +57,7 @@ class database:
         return
 
     def select_exercise(self,id):
-        url = f"http://ec2-16-170-250-70.eu-north-1.compute.amazonaws.com:5000/ejercicio?id={id}"
+        url = f"http://ec2-3-88-193-156.compute-1.amazonaws.com:5000/ejercicio?id={id}"
         try:
             response = requests.get(url)
             if response.status_code == 200:        
@@ -79,7 +79,7 @@ class database:
         return        
     #### Modificar para que tambien saque las animaciones
     def select_exercises(self,ids):
-        url = f"http://ec2-16-170-250-70.eu-north-1.compute.amazonaws.com:5000/ejercicios"
+        url = f"http://ec2-3-88-193-156.compute-1.amazonaws.com:5000/ejercicios"
         try:
             response = requests.get(url)
             if response.status_code == 200:        
@@ -97,7 +97,7 @@ class database:
         return                  
 
     def select_animation(self,id):
-        url = f"http://ec2-16-170-250-70.eu-north-1.compute.amazonaws.com:5000/ejercicio?id={id}"
+        url = f"http://ec2-3-88-193-156.compute-1.amazonaws.com:5000/ejercicio?id={id}"
         try:
             response = requests.get(url)
             if response.status_code == 200:        

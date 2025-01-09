@@ -589,6 +589,7 @@ class CSV():
             print(' - ' + str(response['text']))
             print(' - ' + str(video_au))
             writer.writerow(['say',str(response['text']), str(Emotions.estado),lang,animation_tag,str(Emotions.tag()),str(video_au),length,avatar])
+            video_au = "00"
         if(watch):
             writer.writerow(['watch',str(watchResponse)])
             watch = False
@@ -597,7 +598,10 @@ class CSV():
             interface = False
         elif(routine_say):
             for i,exercise in enumerate(exercises):
+                video_au = "00"
                 writer.writerow(['say',str(exercise), str(Emotions.estado),lang,animations[i],str(Emotions.tag()),str(video_au),length,avatar])
+                print(' - ' + str(exercise))
+                print(' - ' + str(video_au))
             routine_say = False
             writer.writerow(['listen'])
         elif(exercise_say):            

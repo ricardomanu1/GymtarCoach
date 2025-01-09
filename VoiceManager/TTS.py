@@ -130,8 +130,7 @@ while True:
                     if (video == "00"):  
                         # Audio generated                    
                         result = speech_synthesizer.speak_ssml_async(ssml_string).get()
-                        # Audio memory stream to file       
-                               
+                        # Audio memory stream to file                                      
                         stream = AudioDataStream(result)
                         
                         time_per_phrase = (time.time() - start_time2)                   
@@ -156,7 +155,7 @@ while True:
                         print(ruta_completa)
                         if os.path.exists(ruta_completa):                            
                             reproducir_audio(ruta_completa)
-
+                    video = "00"
                 elif(str(row['action'])=="listen"):
                     archi1 = open("listening.txt","w") 
                     archi1.close()                     
